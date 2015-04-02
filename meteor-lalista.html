@@ -1,0 +1,33 @@
+<head>
+  <title>"To-Do-List" biodavidjm app</title>
+</head>
+
+<body>
+  <div class="container">
+    <header>
+      <h6>biodavidjm meteor app</h6>
+      <h1>La Lista</h1>
+      <h4><em>A personal online list of tasks</em> </h4>
+      <h6>(Available from everywhere in the cyberspace)</h6>
+      <form class="new-task">
+        <input type="text" name="text" placeholder="TYPE HERE whatever you wanna add to THE list as NEW TASK" />
+      </form>
+    </header>
+
+    <ul>
+      {{#each tasks}}
+        {{> task}}
+      {{/each}}
+    </ul>
+  </div>
+</body>
+
+<template name="task">
+  <li class="{{#if checked}}checked{{/if}}">
+    <button class="delete">&times;</button>
+
+    <input type="checkbox" checked="{{checked}}" class="toggle-checked" />
+
+    <span class="text">{{text}}</span>
+  </li>
+</template>
